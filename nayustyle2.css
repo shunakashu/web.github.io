@@ -1,0 +1,41 @@
+/* =========================================
+   プロフィールエリア (Profile Container)
+   ========================================= */
+.profile-container {
+    display: flex;
+    align-items: center; /* 縦方向の中央揃え */
+    gap: 30px;           /* テキストと写真の間の余白 */
+    flex-wrap: wrap;     /* 画面が狭い時に折り返す */
+}
+
+.profile-text {
+    flex: 1;             /* 残りのスペースを埋める */
+    min-width: 250px;    /* スマホなどで折り返す基準の幅 */
+}
+
+.profile-image {
+    flex-shrink: 0;
+    width: 150px;        /* 顔写真のサイズ（お好みで調整してください） */
+    text-align: center;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* ★ 50% から 15px に変更（数字を大きくするとより丸くなります） */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+/* スマホ対応（画面幅が600px以下の場合のレイアウト） */
+@media (max-width: 600px) {
+    .profile-container {
+        /* スマホでは写真をテキストの上に配置する */
+        flex-direction: column-reverse; 
+    }
+    .profile-image {
+        margin-bottom: 20px;
+        width: 120px;    /* スマホでは少し写真を小さくする */
+    }
+}
