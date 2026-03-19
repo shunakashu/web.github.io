@@ -1,3 +1,219 @@
+@charset "UTF-8";
+
+/* =========================================
+   ベーススタイル
+   ========================================= */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #105F75;
+    --bg-color: #f9f9f9;
+    --surface-color: #ffffff;
+    --text-color: #333333;
+    --font-base: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   ヘッダー (Header) - 右上配置設定を追加
+   ========================================= */
+header {
+    /* 子要素(nav)を絶対配置するための基準点にします */
+    position: relative; 
+    background-color: #D9EFF9;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding: 60px 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+header p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0;
+}
+
+/* ナビゲーション（ボタンエリア） */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* ボタン同士の間隔も少し狭く */
+}
+
+/* ★ PC画面（幅600px以上）でのみ「右上」に固定する設定 */
+@media (min-width: 600px) {
+    header nav {
+        position: absolute; /* 絶対配置 */
+        top: 20px;          /* 上端からの距離 */
+        right: 20px;        /* 右端からの距離 */
+    }
+}
+
+/* スマホ画面（幅600px未満）ではタイトルの下に配置（重なり防止） */
+@media (max-width: 599px) {
+    header nav {
+        margin-top: 20px; /* タイトルとの隙間 */
+    }
+}
+
+/* =========================================
+   ★ アニメーション付きボタン (.btn) - 小さく修正
+   ========================================= */
+.btn {
+    display: inline-block;
+    
+    /* サイズを小さく調整 */
+    padding: 4px 16px;    /* 内側の余白を減らす */
+    font-size: 0.8rem;    /* 文字サイズを小さく */
+    
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none !important;
+    
+    /* アニメーション設定 */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.btn2 {
+    display: inline-block;
+    
+    /* サイズを小さく調整 */
+    padding: 4px 16px;    /* 内側の余白を減らす */
+    font-size: 1.0rem;    /* 文字サイズを小さく */
+    
+    color: var(--primary-color);
+    border: 0.5px solid var(--primary-color);
+    border-radius: 50px;
+    text-decoration: none !important;
+    
+    /* アニメーション設定 */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* ホバー時の変化（維持） */
+.btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px); /* 浮き上がり幅も少し控えめに */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn2:hover {
+    color: #fff;
+    transform: translateY(-2px); /* 浮き上がり幅も少し控えめに */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   メインコンテンツ (Main)
+   ========================================= */
+#contents {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding: 40px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    header, #contents {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #contents {
+        padding: 20px;
+    }
+}
+
+section { margin-bottom: 50px; }
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+section p { margin-bottom: 10px; }
+section p a { font-weight: 500; }
+
+footer {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 40px;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* ページトップボタンなど */
+.pagetop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.pagetop a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.pagetop a:hover { opacity: 1; }
+
+#menubar { display: none; }
+
 /* =========================================
    プロフィールエリア (Profile Container)
    ========================================= */
