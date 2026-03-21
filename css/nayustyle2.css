@@ -232,7 +232,7 @@ footer {
 /* ヘッダー内のh1, pのスタイルを微調整（元のtext-align:centerを上書き） */
 header .header-profile-text h1,
 header .header-profile-text p {
-    text-align: left;
+    text-align: center;
     margin-left: 0;
     margin-right: 0;
 }
@@ -260,6 +260,12 @@ header .header-profile-text p {
     .header-profile-container {
         justify-content: center; 
         text-align: center;
+    }
+    .header-profile-container::before {
+        content: "";
+        display: block;
+        width: 200px;  /* 右側の写真（.header-photo）と同じ幅に設定 */
+        flex-shrink: 0;
     }
 }
 
