@@ -226,7 +226,7 @@ footer {
 }
 
 .header-profile-text {
-    text-align: left;       /* 名前テキストは左揃えにする */
+    text-align: center;      
 }
 
 /* ヘッダー内のh1, pのスタイルを微調整（元のtext-align:centerを上書き） */
@@ -239,7 +239,7 @@ header .header-profile-text p {
 
 .header-photo {
     flex-shrink: 0;
-    width: 120px;           /* ヘッダー用に少し小さく調整 (About meは150pxだった) */
+    width: 150px;           /* ヘッダー用に少し小さく調整 (About meは150pxだった) */
 }
 
 .header-photo img {
@@ -258,8 +258,8 @@ header .header-profile-text p {
         padding-right: 220px; /* ナビゲーションの幅に合わせて調整 */
     }
     .header-profile-container {
-        justify-content: flex-start; /* PCでは左寄せにしてスペースを有効活用 */
-        text-align: left;
+        justify-content: center; 
+        text-align: center;
     }
 }
 
@@ -276,6 +276,6 @@ header .header-profile-text p {
         text-align: center;    /* スマホではテキストもセンター揃え */
     }
     .header-photo {
-        width: 100px;           /* スマホでは写真をさらに少し小さく */
+        width: 120px;           /* スマホでは写真をさらに少し小さく */
     }
 }
