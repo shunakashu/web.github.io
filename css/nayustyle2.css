@@ -119,7 +119,7 @@ header nav ul {
     
     /* サイズを小さく調整 */
     padding: 4px 16px;    /* 内側の余白を減らす */
-    font-size: 1.0rem;    /* 文字サイズを小さく */
+    font-size: 0.8rem;
     
     color: var(--primary-color);
     border: 0.5px solid var(--primary-color);
@@ -339,7 +339,7 @@ header .header-profile-text h1 {
 /* Photo: circular with hover glow */
 .header-photo {
     flex-shrink: 0;
-    width: 120px;
+    width: 160px;
 }
 
 .header-photo img {
